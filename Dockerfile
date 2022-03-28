@@ -28,18 +28,22 @@ RUN rm OpenBullet2.zip
 
 EXPOSE 5000
 
-CMD ["dotnet", "./OpenBullet2.dll", "--urls=http://*:5000"]
-
-
-
-
-
-
-
-
-
-
 RUN chmod +x /system/conf.d/websockify.sh
+
 RUN chmod +x /system/supervisor.sh
 
-CMD ["/system/supervisor.sh"]
+CMD ["dotnet", "./OpenBullet2.dll", "--urls=http://*:5000", "/system/supervisor.sh"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
